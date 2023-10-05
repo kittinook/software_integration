@@ -27,8 +27,6 @@ ament_python_install_package(${PROJECT_NAME})
 
 # Install Python executables
 install(PROGRAMS
-  scripts/mqtt_turtlesim.py
-  scripts/mqtt_xicro.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
