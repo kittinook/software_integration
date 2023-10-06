@@ -16,9 +16,37 @@ source install/setup.bash
 ```
 pip3 install paho-mqtt
 ```
-## Testing out Tele-operation System
+# Testing out Tele-operation System
 
-# Master Side
+## Simple MQTT Example
+## Master-Slave Tele-operation with Xicro Interface
+
+# Simple MQTT Example
+
+## Master Computer
+
+Terminal 1: Open MQTTMaster Node
+```
+ros2 run software_integration mqtt_master.py 
+```
+Terminal 2: Open Command Line
+```
+ros2 topic pub /pub2mqtt std_msgs/msg/String "data: 'Hello FIBO !!!
+
+## Master Computer
+
+Terminal 1: Open MQTTSlave Node
+```
+ros2 run software_integration mqtt_slave.py 
+```
+Terminal 2: Open Command Line
+```
+ros2 topic echo /mqtt2sub
+
+
+# Master-Slave Tele-operation with Xicro Interface
+
+## Master Computer
 
 Terminal 1: Open Xicro Node
 ```
@@ -26,10 +54,10 @@ ros2 run xicro_pkg xicro_node_demo_ID_1_arduino.py
 ```
 Terminal 2: Turtlesim_Plus
 ```
-ros2 run software_integration_solution mqtt_xicro.py
+ros2 run software_integration mqtt_xicro.py
 ```
 
-# Slave Side
+## Slave Computer
 
 Terminal 1: Turtlesim_Plus
 ```
@@ -37,5 +65,5 @@ ros2 run turtlesim_plus turtlesim_plus_node.py
 ```
 Terminal 2: Master Node
 ```
-ros2 run software_integration_solution mqtt_turtlesim.py
+ros2 run software_integration mqtt_turtlesim.py
 ```
