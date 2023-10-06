@@ -32,8 +32,9 @@ ros2 run software_integration mqtt_master.py
 Terminal 2: Open Command Line
 ```
 ros2 topic pub /pub2mqtt std_msgs/msg/String "data: 'Hello FIBO !!!
+```
 
-## Master Computer
+## Slave Computer
 
 Terminal 1: Open MQTTSlave Node
 ```
@@ -42,7 +43,7 @@ ros2 run software_integration mqtt_slave.py
 Terminal 2: Open Command Line
 ```
 ros2 topic echo /mqtt2sub
-
+```
 
 # Master-Slave Tele-operation with Xicro Interface
 
